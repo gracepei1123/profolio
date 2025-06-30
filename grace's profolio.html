@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Pei's Portfolio </title>
+    <!-- Kết nối Tailwind CSS CDN để dễ dàng styling và responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Kết nối Google Fonts: Inter để có font chữ hiện đại -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Kết nối Font Awesome để sử dụng các biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tùy chỉnh font chữ toàn bộ trang */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Tùy chỉnh thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db; /* gray-300 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; /* gray-400 */
+        }
+
+        /* CSS cho hiệu ứng fade-in khi cuộn */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Đảm bảo nav sticky hoạt động tốt */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Định dạng đặc biệt cho timeline */
+        .timeline-container {
+            position: relative;
+            padding-left: 50px; /* Khoảng cách cho đường kẻ timeline */
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px; /* Vị trí của đường kẻ timeline */
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #d1d5db; /* gray-300 */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px; /* Khoảng cách cho chấm tròn */
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 14px; /* Vị trí của chấm tròn trên đường kẻ */
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            background-color: #facc15; /* yellow-400 */
+            border-radius: 50%;
+            border: 4px solid #fff; /* Border trắng bao quanh chấm tròn */
+            box-shadow: 0 0 0 2px #facc15; /* yellow-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-16 text-center shadow-lg rounded-b-xl">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-2 leading-tight">Bui Thanh Thao</h1>
+            <p class="text-xl md:text-2xl font-light opacity-90">Master Student | Journalism and Communication</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky-nav bg-gray-900 text-white shadow-md rounded-t-xl mx-4 -mt-8 relative z-20">
+        <div class="container mx-auto px-4 py-3 flex justify-center space-x-8 md:space-x-12">
+            <a href="#about" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out py-2 px-3 rounded-md">About Me</a>
+            <a href="#education" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out py-2 px-3 rounded-md">Education</a>
+            <a href="#experience" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out py-2 px-3 rounded-md">Experiences</a>
+            <a href="#contact" class="text-lg font-medium hover:text-yellow-400 transition duration-300 ease-in-out py-2 px-3 rounded-md">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 my-8 md:my-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 fade-in-section">
+            <h2 class="text-4xl font-bold text-center text-purple-700 mb-8">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <!-- Đường dẫn ảnh của bạn từ GitHub đã được cập nhật tại đây -->
+                <img src="https://github.com/gracepei1123/profolio/blob/main/%E8%A3%B4%E6%B8%85%E6%AC%A2.jpg?raw=true" alt="Ảnh cá nhân" class="w-48 h-48 rounded-full object-cover border-4 border-purple-500 shadow-md mb-6 md:mb-0 flex-shrink-0">
+                <div class="text-lg leading-relaxed text-gray-700">
+                    <p class="mb-4">Hi, I'm Master student in School of Journalism and Communication, at Xi'an Jiaotong University (Shaanxi, China) .</p>
+                    <p>My research interests are Cross-cultural Communication, International Communication and Artificial Intelligence.</p>
+                    <p>In my free time, I always read paper of Artificial Intelligence on Arxiv.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 fade-in-section">
+            <h2 class="text-4xl font-bold text-center text-purple-700 mb-8">Education Background</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-semibold text-gray-900">Xi'an Jiaotong University</h3>
+                    <p class="text-purple-600 font-medium text-lg mb-1">Master of Jounarlism and Communication</p>
+                    <p class="text-gray-600 mb-2">9/2022 - Now</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>GPA: 3.59/4.0</li>
+                        <li>My master thesis: "Research of TikTok influencers on the willingness of Generation Z in Vietnam to purchase Chinese cosmetics"</li>
+                        <li>Honors and Awards: Xi'an Belt and Road Scholarship (2022-2023, 2023-2024, 2024-2025), Second prize on the 9st Guangdong Pronvicial Jounarlism and Communication Graduate Academic Forum (5/2025, Guangdong, China).</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-semibold text-gray-900">Ho Chi Minh City Open University</h3>
+                    <p class="text-purple-600 font-medium text-lg mb-1">Bachelor Degree of Chinese Language</p>
+                    <p class="text-gray-600 mb-2">8/2022 - 8/2022</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Open University Scholarship (2018, 2019, 2020, 2021, 2022).</li>
+                        <li>Co-founder of ZWS Chinese Club (2020-2022).</li>
+                    </ul>
+                </div>
+                <!-- Thêm các mục học vấn khác nếu có -->
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12 fade-in-section">
+            <h2 class="text-4xl font-bold text-center text-purple-700 mb-8">Experiences</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-semibold text-gray-900">Công ty ABC Tech</h3>
+                    <p class="text-purple-600 font-medium text-lg mb-1">Nhà Phát Triển Full-stack</p>
+                    <p class="text-gray-600 mb-2">Tháng 7/2022 - Hiện tại</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Phát triển và bảo trì các tính năng mới cho ứng dụng quản lý khách hàng (CRM) sử dụng React.js, Node.js và MongoDB.</li>
+                        <li>Tối ưu hóa hiệu suất ứng dụng, giảm thời gian tải trang 20% và cải thiện trải nghiệm người dùng.</li>
+                        <li>Tham gia thiết kế kiến trúc hệ thống và tích hợp API với các dịch vụ bên thứ ba.</li>
+                        <li>Lãnh đạo nhóm nhỏ (3 người) trong dự án chuyển đổi giao diện người dùng sang Next.js.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-2xl font-semibold text-gray-900">Công ty XYZ Software (Thực tập)</h3>
+                    <p class="text-purple-600 font-medium text-lg mb-1">Thực tập sinh Phát triển Web</p>
+                    <p class="text-gray-600 mb-2">Tháng 3/2022 - Tháng 6/2022</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Hỗ trợ phát triển giao diện người dùng cho một ứng dụng e-commerce bằng HTML, CSS, JavaScript thuần.</li>
+                        <li>Tham gia vào quy trình kiểm thử và sửa lỗi phần mềm.</li>
+                        <li>Học hỏi các phương pháp phát triển Agile/Scrum trong môi trường chuyên nghiệp.</li>
+                    </ul>
+                </div>
+                <!-- Thêm các mục kinh nghiệm khác nếu có -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white p-8 md:p-12 rounded-xl shadow-lg fade-in-section">
+            <h2 class="text-4xl font-bold text-center text-purple-700 mb-8">Contact</h2>
+            <p class="text-center text-lg text-gray-700 mb-6">You can contact me through the following channels:</p>
+            <div class="flex flex-col items-center space-y-4 text-xl">
+                <div class="flex items-center space-x-3 text-gray-800">
+                    <i class="fas fa-envelope text-purple-500"></i>
+                    <a href="mailto:pqh3122999143@stu.xjtu.edu.cn" class="hover:text-yellow-600 transition duration-300">emailcuaban@example.com</a>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-800">
+                    <i class="fab fa-linkedin text-purple-500"></i>
+                    <a href="https://www.linkedin.com/in/grace-pei-553120280/" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-600 transition duration-300">Linkedin/grace pei</a>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-800">
+                    <i class="fab fa-github text-purple-500"></i>
+                    <a href="https://github.com/gracepei1123" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-600 transition duration-300">GitHub/gracepei1123</a>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-800">
+                    <i class="fas fa-phone text-purple-500"></i>
+                    <span class="text-gray-800">(+84) 123 456 789</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8 text-center mt-12 rounded-t-xl">
+        <div class="container mx-auto px-4">
+            <p class="text-sm">&copy; 2025 Portfolio Của Thẻo. Mọi quyền được bảo lưu.</p>
+            <p class="text-xs mt-2 opacity-75">Thiết kế bởi Gemini AI</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for scroll-based fade-in effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 // Kích hoạt khi 20% của phần tử hiển thị trên màn hình
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Ngừng quan sát sau khi đã hiển thị
+                    }
+                });
+            }, observerOptions); // Đã loại bỏ dấu đóng ngoặc nhọn thừa ở đây
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
